@@ -1,29 +1,40 @@
 import React from "react";
 import styled from "styled-components";
-//import './main.css';
+import './main.css';
 
 const Container = styled.div`
-  width: 100vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   font-size: 28px;
-  margin-top: 20px;
 `;
 
 const Video = styled.iframe`
 `;
 
-export default () => (
+const Dae = styled.div`
+margin-top: 100px;
+height: 0px;
+font-size: 90px;
+`;
+
+export default ({movie, tv}) => {
+  const a = [1, 2, 3, 4, 5];
+  
+  return (
   <Container>
-    <div class="video-background">
-  <div class="video-foreground">
-    <iframe src="https://www.youtube.com/embed/W0LHTWG-UmQ?controls=0&rel=0&autoplay=1&mute=1&loop=1&playlist=W0LHTWG-UmQ" frameborder="0" allowfullscreen></iframe> 
+    <Dae>
+      Godzilla vs. King
+    </Dae>
+    <div className="video-background">
+  <div className="video-foreground">
+    <iframe src="https://www.youtube.com/embed/odM92ap8_c0?controls=0&rel=0&autoplay=1&mute=1&loop=1" frameBorder="0" allowFullScreen></iframe> 
   </div>
 </div>
   </Container>
 );
 
-
+}
 
 
 
