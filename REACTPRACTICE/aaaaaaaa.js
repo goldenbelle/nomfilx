@@ -2,18 +2,16 @@ import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 
 const App = () => {
-
   return (
     <div className="App">
-
+      gaega
+      <p></p>
     </div>
   );
 };
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(<App />, rootElement);
-
-
 
 /*
 코멘트 종류

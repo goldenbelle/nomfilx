@@ -6,7 +6,6 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   background-repeat: no-repeat;
-
 `;
 
 const Modal = styled.div`
@@ -22,9 +21,7 @@ const ModalC = styled.div`
   width: 100%;
 `;
 
-
 export default class Popup extends Component {
-
   handleClick = () => {
     this.props.toggle();
   };
@@ -33,11 +30,18 @@ export default class Popup extends Component {
     const { videoKey } = this.props;
     return (
       <Container>
-      <Modal className="modal">
-        <ModalC className="modal_content">
-          <iframe width="560" height="315" src={`https://www.youtube.com/embed/${videoKey}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </ModalC>
-      </Modal>
+        <Modal className="modal">
+          <ModalC className="modal_content">
+            <iframe
+              width="560"
+              height="315"
+              src={`https://www.youtube.com/embed/${videoKey}`}
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </ModalC>
+        </Modal>
       </Container>
     );
   }

@@ -9,7 +9,8 @@ const Container = styled.div`
 `;
 
 const Image = styled.div`
-  background-image: url(${props => props.bgUrl}); //-> bgUrl: Image에 있는 사용자prop
+  background-image: url(${(props) =>
+    props.bgUrl}); //-> bgUrl: Image에 있는 사용자prop
   height: 180px; //-> height 없으면 이미지 안나타남.
   background-size: cover;
   border-radius: 4px;
@@ -51,19 +52,13 @@ const Year = styled.span`
   color: rgba(255, 255, 255, 0.5);
 `;
 
-
 // Poster Component
 const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
   <Link to={isMovie ? `/movie/${id}` : `/show/${id}`}>
     <Container>
-
       <ImageContainer>
-      <Image
-          bgUrl={
-            imageUrl
-              ? `https://image.tmdb.org/t/p/w300${imageUrl}`
-              : "??"
-          }
+        <Image
+          bgUrl={imageUrl ? `https://image.tmdb.org/t/p/w300${imageUrl}` : "??"}
           //-> "??" 대신에 require("파일경로") 하면 주소르 부를 수 있다.
         />
         <Rating>
@@ -74,11 +69,8 @@ const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
         </Rating>
       </ImageContainer>
 
-      <Title>
-        {title && title.length > 18 ? "너무길어" : title}
-      </Title>
+      <Title>{title && title.length > 18 ? "너무길어" : title}</Title>
       <Year>{year}</Year>
-
     </Container>
   </Link>
 );
@@ -89,7 +81,7 @@ Poster.propTypes = {
   title: PropTypes.string.isRequired,
   rating: PropTypes.number,
   year: PropTypes.string,
-  isMovie: PropTypes.bool
+  isMovie: PropTypes.bool,
 };
 
 export default Poster;
