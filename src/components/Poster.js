@@ -58,7 +58,11 @@ const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
     <Container>
       <ImageContainer>
         <Image
-          bgUrl={imageUrl ? `https://image.tmdb.org/t/p/w300${imageUrl}` : "??"}
+          bgUrl={
+            imageUrl
+              ? `https://image.tmdb.org/t/p/w300${imageUrl}`
+              : require("../assets/noimg.png").default
+          }
           //-> "??" 대신에 require("파일경로") 하면 주소르 부를 수 있다.
         />
         <Rating>
@@ -69,7 +73,9 @@ const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
         </Rating>
       </ImageContainer>
 
-      <Title>{title && title.length > 18 ? "너무길어" : title}</Title>
+      <Title>
+        {title && title.length > 18 ? `${title.substring(0, 18)}...` : title}
+      </Title>
       <Year>{year}</Year>
     </Container>
   </Link>

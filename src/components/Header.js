@@ -14,35 +14,42 @@ const Header = styled.header`
   background-color: rgba(20, 20, 20, 0.8);
   z-index: 10;
   box-shadow: 0px 1px 5px 2px rgba(0, 0, 0, 0.8);
+  justify-content: space-between;
 `;
 
-const List = styled.ul`
+const List = styled.div`
   display: flex;
+  width: 50%;
 `;
 
-const Item = styled.li`
+const Item = styled.div`
   width: 80px;
   height: 50px;
   text-align: center;
   border-bottom: 3px solid
-    ${(props) => (props.current ? "#3498db" : "transparent")};
+    ${(props) => (props.current ? "#FFC300" : "transparent")};
   transition: border-bottom 0.5s ease-in-out;
+  justify-content: space-evenly;
 `;
 
 const SLink = styled(Link)`
   height: 50px;
   display: flex;
+  font-size: 15px;
   align-items: center;
   justify-content: center;
+`;
+
+const Img = styled.img`
+  width: 50px;
 `;
 
 export default withRouter(({ location: { pathname } }) => (
   <Header>
     <List>
-      <Item current={pathname === "/"}>
+      <Item current={pathname === "/aa"}>
         <SLink to="/">
-          <img src="src/assets/logo.png" />
-          Home
+          <Img src={require("../assets/logo.png").default} />
         </SLink>{" "}
       </Item>
       <Item current={pathname === "/movie"}>
